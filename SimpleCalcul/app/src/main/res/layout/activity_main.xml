@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="10dp"
+    android:layout_margin="10dp"
     tools:context=".MainActivity">
 
     <EditText
@@ -14,12 +14,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
+        android:inputType="number"
         android:hint="숫자1 입력" />
     <EditText
         android:id="@+id/edt2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
+        android:inputType="number"
         android:hint="숫자2 입력" />
     <TableLayout
         android:stretchColumns="*"
@@ -112,6 +114,6 @@
         android:textColor="#ff0000"
         android:gravity="bottom"
         android:layout_marginBottom="15dp"
-        android:text="계산결과: "
+        android:text="계산 결과: "
         android:textSize="20sp" />
 </LinearLayout>
