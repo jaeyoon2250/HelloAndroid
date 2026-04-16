@@ -1,16 +1,17 @@
-package kr.ac.kopo.layouttest;
+package kr.ac.kopo.framlayouttest;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.TextView;
-import android.widget.Toast;
 
+import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
-
     Button btnred, btnblue;
     LinearLayout linearred, linearblue;
     @Override
@@ -24,8 +25,14 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
+        btnred = findViewById(R.id.btn_red);
+        btnblue = findViewById(R.id.btn_blue);
+        linearred = findViewById(R.id.Linear_red);
+        linearblue = findViewById(R.id.Linear_blue);
 
-    };
+        btnred.setOnClickListener(btnListener);
+        btnblue.setOnClickListener(btnListener);
+    }
     View.OnClickListener btnListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
