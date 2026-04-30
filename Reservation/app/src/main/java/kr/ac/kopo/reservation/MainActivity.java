@@ -25,6 +25,8 @@ public class MainActivity extends AppCompatActivity {
     CalendarView calendar;
     TimePicker timePicker;
     TextView textResult;
+    int selectedYear, selectedMonth, selectedDay;
+    int selectedHour, selectedMin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +63,10 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 chronometer.stop();
                 chronometer.setTextColor(Color.BLUE);
+                selectedHour = timePicker.getHour();
+                selectedMin = timePicker.getMinute();
+                textResult.setText(selectedYear + "년 " + selectedMonth + "월 "
+                        + selectedDay + "일 " + selectedHour + "시 " + selectedMin + "분으로 예약 완료");
             }
         });
 
@@ -75,6 +81,15 @@ public class MainActivity extends AppCompatActivity {
                     timePicker.setVisibility(View.INVISIBLE);
                     calendar.setVisibility(View.VISIBLE);
                 }
+            }
+        });
+
+        calendar.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+            @Override
+            public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
+                selectedYear = year;
+                selectedMonth = month + 1;
+                selectedDay = dayOfMonth;
             }
         });
     }
