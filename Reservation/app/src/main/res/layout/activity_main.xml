@@ -17,12 +17,6 @@
         android:layout_marginBottom="10dp"
         android:format="예약에 걸린 시간: %s"
         android:textSize="20sp"/>
-    <Button
-        android:id="@+id/btn_start"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:text="예약시작"/>
     <RadioGroup
         android:id="@+id/rg"
         android:layout_width="wrap_content"
@@ -42,8 +36,9 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <CalendarView
+        <DatePicker
             android:id="@+id/calendar"
+            android:datePickerMode="calendar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
         <TimePicker
@@ -57,14 +52,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal">
-        <Button
-            android:id="@+id/btn_done"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="20dp"
-            android:text="예약완료"/>
         <TextView
             android:id="@+id/tv_result"
+            android:text="예약완료하시려면 길게 눌러주세요"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="15sp"/>
