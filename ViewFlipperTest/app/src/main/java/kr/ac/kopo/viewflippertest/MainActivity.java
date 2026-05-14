@@ -31,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
 
         btnPrev.setOnClickListener(btnListener);
         btnNext.setOnClickListener(btnListener);
+
+        flipper.setFlipInterval(2000);
     }
 
     View.OnClickListener btnListener = new View.OnClickListener() {
@@ -38,9 +40,9 @@ public class MainActivity extends AppCompatActivity {
         public void onClick(View v) {
             Button btnEvent = (Button) v;
             if (btnEvent == btnPrev)
-                flipper.showPrevious();
+                flipper.startFlipping();
             else
-                flipper.showNext();
+                flipper.stopFlipping();
         }
     };
 }
