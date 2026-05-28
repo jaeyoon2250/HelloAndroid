@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
 
     Button btn;
     String[] itemArr = {"떡볶이", "튀김", "순대"};
+    boolean[] checkArr = {false, false, false};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,12 +39,37 @@ public class MainActivity extends AppCompatActivity {
             AlertDialog.Builder dialog = new AlertDialog.Builder(MainActivity.this);
             dialog.setTitle("버튼 라벨 변경");
             dialog.setIcon(R.drawable.cat);
-            dialog.setItems(itemArr, new DialogInterface.OnClickListener() {
+
+//          체크박스가 선택된 항목이 모두 버튼의 텍스트로 보이게
+            dialog.setMultiChoiceItems(itemArr, checkArr, new DialogInterface.OnMultiChoiceClickListener() {
                 @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    btn.setText(itemArr[which]);
+                public void onClick(DialogInterface dialog, int which, boolean isChecked) {
+                    btn.setText("");
+                    if (isChecked)
+                        checkArr[which] = true;
+
+                    for (int i=0; i < checkArr.length; i++) {
+                        if (checkArr[i])
+                            btn.append(itemArr[i]);
+                    }
                 }
             });
+
+//            라디오버튼 항목으로 구성된 대화상자
+//            dialog.setSingleChoiceItems(itemArr, 0, new DialogInterface.OnClickListener() {
+//                @Override
+//                public void onClick(DialogInterface dialog, int which) {
+//                    btn.setText(itemArr[which]);
+//                }
+//            });
+
+//            항목으로 구성된 대화상자
+//            dialog.setItems(itemArr, new DialogInterface.OnClickListener() {
+//                @Override
+//                public void onClick(DialogInterface dialog, int which) {
+//                    btn.setText(itemArr[which]);
+//                }
+//            });
             dialog.setPositiveButton("닫기", null);
             dialog.show();
         }
