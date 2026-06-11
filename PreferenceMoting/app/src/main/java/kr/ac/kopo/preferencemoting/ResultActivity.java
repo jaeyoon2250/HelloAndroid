@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
@@ -14,6 +15,9 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class ResultActivity extends AppCompatActivity {
+
+    TextView textWin;
+    ImageView imageWin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,11 +31,29 @@ public class ResultActivity extends AppCompatActivity {
         });
 
         Intent intent = getIntent();
+        int[] imgResArr = {R.drawable.p1, R.drawable.p2, R.drawable.p3, R.drawable.p4, R.drawable.p5, R.drawable.p6, R.drawable.p7, R.drawable.p8, R.drawable.p9};
         int[] voteCount = intent.getIntArrayExtra("voteCount");
         String[] pinguNameArr = intent.getStringArrayExtra("pinguNameArr");
 
         TextView[] textArr = new TextView[pinguNameArr.length];
         RatingBar[] ratingArr = new RatingBar[pinguNameArr.length];
+
+        textWin = findViewById(R.id.text_win);
+        imageWin = findViewById(R.id.image_win);
+
+        //투표수 중 최댓값 찾기
+        int maxIndex = 0;
+        int maxValue = voteCount[0];
+
+        for (int i = 1; i < voteCount.length; i++) {
+            if (voteCount[i] > maxValue) {
+                maxValue = voteCount[i];
+                maxIndex = i;
+            }
+        }
+
+        textWin.setText(pinguNameArr[maxIndex]);
+        imageWin.setImageResource(imgResArr[maxIndex]);
 
         int[] textIdArr = {R.id.text1, R.id.text2, R.id.text3, R.id.text4, R.id.text5, R.id.text6, R.id.text7, R.id.text8, R.id.text9};
         int[] ratingIdArr = {R.id.rating1, R.id.rating2, R.id.rating3, R.id.rating4, R.id.rating5, R.id.rating6, R.id.rating7, R.id.rating8, R.id.rating9};
