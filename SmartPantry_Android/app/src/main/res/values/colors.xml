@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Primary -->
+    <color name="green_primary">#4CAF50</color>
+    <color name="green_primary_dark">#388E3C</color>
+    <color name="green_light">#E8F5E9</color>
+    <color name="green_text">#4CAF50</color>
+
+    <!-- Background -->
+    <color name="background_gray">#F6F6F6</color>
+    <color name="card_white">#FFFFFF</color>
+
+    <!-- Text -->
+    <color name="text_primary">#212121</color>
+    <color name="text_secondary">#757575</color>
+    <color name="text_hint">#BDBDBD</color>
+    <color name="text_white">#FFFFFF</color>
+    <color name="text_white_dim">#E5FFE5</color>
+
+    <!-- D-Day Badge: 안전 (D-4 이상) -->
+    <color name="badge_safe_bg">#E8F5E9</color>
+    <color name="badge_safe_text">#4CAF50</color>
+
+    <!-- D-Day Badge: 임박 (D-3 이하) -->
+    <color name="badge_soon_bg">#FFF9C4</color>
+    <color name="badge_soon_text">#F9A825</color>
+
+    <!-- D-Day Badge: 오늘 -->
+    <color name="badge_today_bg">#FFF3E0</color>
+    <color name="badge_today_text">#FF9800</color>
+
+    <!-- D-Day Badge: 만료 -->
+    <color name="badge_expired_bg">#FFEBEE</color>
+    <color name="badge_expired_text">#F44336</color>
+
+    <!-- Icon circle colors -->
+    <color name="icon_green">#4CAF50</color>
+    <color name="icon_orange">#FF9800</color>
+    <color name="icon_red">#F44336</color>
+    <color name="icon_blue">#2196F3</color>
+    <color name="icon_purple">#9C27B0</color>
+    <color name="icon_teal">#009688</color>
+</resources>

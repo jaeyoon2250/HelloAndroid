@@ -1,0 +1,17 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Base.Theme.SmartPantry_Android" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/green_primary</item>
+        <item name="colorPrimaryDark">@color/green_primary_dark</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSurface">@color/card_white</item>
+        <item name="android:windowBackground">@color/background_gray</item>
+    </style>
+
+    <style name="Theme.SmartPantry_Android" parent="Base.Theme.SmartPantry_Android" />
+
+    <!-- Splash Theme: 상태바 색상 맞춤 -->
+    <style name="Theme.SmartPantry_Android.Splash" parent="Theme.SmartPantry_Android">
+        <item name="android:windowBackground">@color/green_primary</item>
+        <item name="android:statusBarColor">@color/green_primary</item>
+    </style>
+</resources>
